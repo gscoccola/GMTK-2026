@@ -2,9 +2,13 @@ using UnityEngine;
 
 public class NPC : Interactable
 {
+    [SerializeField] private string npcName;
+    [SerializeField] private string[] dialogue;
+
     public override void Interact(PlayerInteraction player)
     {
         Debug.Log("NPC");
-        //Add whatever u want for the interact event here
+        Debug.Log("There should probably be some NPC states here");
+        DialogueManager.Instance.SetDialogue(dialogue);
     }
 }

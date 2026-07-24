@@ -19,9 +19,11 @@ public class PlayerInteraction : MonoBehaviour
             currentInteractable = null;
         }
     }
+
+    // Press F button
     public void Interact()
     {
-
+        // Add a check here
         currentInteractable.Interact(this);
 
     }
