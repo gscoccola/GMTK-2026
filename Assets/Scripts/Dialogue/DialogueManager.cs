@@ -15,12 +15,10 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
     private bool isTextFullyVisible = false;
     private int visibleCharacterCount = 0;
 
-    public void OnInteract(InputValue value)
+    public void OnInteract()
     {
         Debug.Log("Interact button pressed");
-
-        if (value.isPressed)
-            OnSkipPerformed();
+        OnSkipPerformed();
     }
 
     private void OnSkipPerformed()
@@ -55,6 +53,7 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
         {
             dialogueText.text = "";
             textBox.SetActive(false);
+            // Daniel: Return all actors to overwold state?
         }
     }
 

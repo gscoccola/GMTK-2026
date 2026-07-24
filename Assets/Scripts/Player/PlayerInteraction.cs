@@ -6,8 +6,12 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // Daniel: To avoid running into multiple Interactables at once.
+        if (currentInteractable != null)
+            return;
+
         Interactable interactable = other.GetComponent<Interactable>();
-            currentInteractable = interactable;
+        currentInteractable = interactable;
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -20,11 +24,18 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
-    // Press F button
     public void Interact()
     {
-        // Add a check here
-        currentInteractable.Interact(this);
+        // Daniel: Should this only be triggered at certain states?
+        if (currentInteractable != null)
+        {
+            currentInteractable.Interact(this);
+        }
 
+        // Daniel: Placeholder/test code, remove later
+        if (currentInteractable is NPC)
+        {
+            DialogueManager.Instance.OnInteract();
+        }
     }
 }

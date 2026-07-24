@@ -15,7 +15,8 @@ public class StateMachine : MonoBehaviour
 
     private void Start()
     {
-        ChangeState(States.FirstOrDefault());
+        if (States != null && States.Length > 0)
+            ChangeState(States.FirstOrDefault());
     }
 
     private void Update()

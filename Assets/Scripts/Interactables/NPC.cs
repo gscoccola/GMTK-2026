@@ -10,5 +10,7 @@ public class NPC : Interactable
         Debug.Log("NPC");
         Debug.Log("There should probably be some NPC states here");
         DialogueManager.Instance.SetDialogue(dialogue);
+        //stateMachine.ChangeState<DialogueState>();
+        // Daniel: Should this apply to all actors?
     }
 }
