@@ -11,12 +11,26 @@ public class PersistentData : PersistentSingleton<PersistentData>
     private GlobalSavedState _globalSavedState = new GlobalSavedState();
     private List<IStateSaver> _activeSavers = new List<IStateSaver>();
 
+    #region Save and load State
+    public void SaveGlobalState(GlobalSavedState globalState)
+    {
+        _globalSavedState = globalState;
+    }
+
     public void SavePlayerState(PlayerSavedState playerState)
     {
         _playerSavedState = playerState;
     }
 
+    public void SaveTilemapState(TilemapSavedState tilemapSavedState, string ID)
+    {
+        _tilemapSavedStates[ID] = tilemapSavedState;
+    }
 
+    public void SaveNPCState(NPCSavedState npcSavedState, string ID)
+    {
+        _npcSavedStates[ID] = npcSavedState;
+    }
 
     public NPCSavedState GetNPCState(string savedID)
     {
@@ -38,12 +52,24 @@ public class PersistentData : PersistentSingleton<PersistentData>
         return _globalSavedState;
     }
 
+    #endregion
+
     public void ClearSavedStates()
     {
         _npcSavedStates.Clear();
         _tilemapSavedStates.Clear();
         _playerSavedState = new PlayerSavedState();
         _globalSavedState = new GlobalSavedState();
+    }
+
+    public void AddSaver(IStateSaver saver)
+    {
+        _activeSavers.Add(saver);
+    }
+
+    public void ClearSavers()
+    {
+        _activeSavers.Clear();
     }
 
     public void Save() 
