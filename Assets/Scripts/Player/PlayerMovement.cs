@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement Settings")]
     [SerializeField] private float speed = 5f;
-    private Vector2 input;
+    public Vector2 Input;
     private Rigidbody2D rb;
 
     private void Awake()
@@ -15,11 +15,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        rb.linearVelocity = input * speed;
+        rb.linearVelocity = Input * speed;
     }
 
     public void Move(InputAction.CallbackContext context)
     {
-        input = context.ReadValue<Vector2>();
+        Input = context.ReadValue<Vector2>();
     }
 }

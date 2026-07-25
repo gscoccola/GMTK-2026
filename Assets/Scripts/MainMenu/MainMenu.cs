@@ -3,18 +3,18 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject _startPanel;
-    [SerializeField] private GameObject _creditsPanel;
+    [SerializeField] private GameObject _setttingsPanel;
 
     private void Start()
     {
         _startPanel.SetActive(true);
-        _creditsPanel.SetActive(false);
+        _setttingsPanel.SetActive(false);
     }
 
-    public void ToggleCredits()
+    public void ToggleSetting()
     {
-        _creditsPanel.SetActive(!_creditsPanel.activeSelf);
-        _startPanel.SetActive(!_creditsPanel.activeSelf);
+        _setttingsPanel.SetActive(!_setttingsPanel.activeSelf);
+        _startPanel.SetActive(!_setttingsPanel.activeSelf);
     }
 
 
