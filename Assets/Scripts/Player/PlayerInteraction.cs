@@ -26,16 +26,11 @@ public class PlayerInteraction : MonoBehaviour
 
     public void Interact()
     {
-        // Daniel: Should this only be triggered at certain states?
         if (currentInteractable != null)
         {
             currentInteractable.Interact(this);
         }
 
-        // Daniel: Placeholder/test code, remove later
-        if (currentInteractable is NPC)
-        {
-            DialogueManager.Instance.OnInteract();
-        }
+        //Dzung: I dont see a need for checking if it is an NPC, you can add the code to the Interact() in NPC.cs
     }
 }
