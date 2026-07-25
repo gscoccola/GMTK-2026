@@ -10,14 +10,19 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
     [SerializeField] private float typingSpeed = 0.05f;
     
     private string[] dialogueLines;
+    public bool HasLinesLoaded => dialogueLines != null;
     private int currentLineIndex = 0;
     private bool isTyping = false;
     private bool isTextFullyVisible = false;
     private int visibleCharacterCount = 0;
 
+    private void Start()
+    {
+        textBox.SetActive(false);
+    }
+
     public void OnInteract()
     {
-        Debug.Log("Interact button pressed");
         OnSkipPerformed();
     }
 
@@ -51,6 +56,7 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
 
         else
         {
+            dialogueLines = null;
             dialogueText.text = "";
             textBox.SetActive(false);
             // Daniel: Return all actors to overwold state?
@@ -91,4 +97,5 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
         currentLineIndex = 0;
         DisplayCurrentLine();
     }
+
 }
