@@ -25,7 +25,7 @@ public class ConnectNode : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 
     public void OnDrag(PointerEventData eventData)
     {
-        minigame?.ContinueDrag(this, eventData);
+        minigame.ContinueDrag(this, eventData);
     }
 
     public void OnPointerUp(PointerEventData eventData)
