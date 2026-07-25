@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   textBox: {fileID: 5269938348319402241}
+  pressAction: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   dialogueText: {fileID: 6370735249313362229}
   typingSpeed: 0.05
 --- !u!1 &4895173210693455035
@@ -299,14 +300,13 @@ GameObject:
   - component: {fileID: 5258939199449332018}
   - component: {fileID: 7195337680945091940}
   - component: {fileID: 2004881344073034452}
-  - component: {fileID: 9143120754555602287}
   m_Layer: 5
   m_Name: Text Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5258939199449332018
 RectTransform:
   m_ObjectHideFlags: 0
@@ -365,21 +365,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &9143120754555602287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5269938348319402241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ee3ed1054bd17e4ca01858cf6bb2d51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TextBox
-  dialogueText: {fileID: 6370735249313362229}
-  typingSpeed: 0.05
-  dialogueLines:
-  - Test Dialogue 1.
-  - Test Dialogue 2.
-  - Test Dialogue 3

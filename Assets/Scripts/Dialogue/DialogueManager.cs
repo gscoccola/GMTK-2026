@@ -6,6 +6,7 @@ using TMPro;
 public class DialogueManager : PersistentSingleton<DialogueManager>
 {
     [SerializeField] private GameObject textBox;
+    [SerializeField] private InputActionReference pressAction;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private float typingSpeed = 0.05f;
     
@@ -17,8 +18,22 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
 
     public void OnInteract()
     {
-        Debug.Log("Interact button pressed");
-        OnSkipPerformed();
+        if (pressAction != null)
+            pressAction.action.Enable();
+    }
+    
+    private void Update()
+    {
+        HandleInput();
+    }
+
+    private void HandleInput()
+    {
+        if (pressAction == null)
+            return;
+
+        if (pressAction.action.WasPressedThisFrame())
+            OnSkipPerformed();
     }
 
     private void OnSkipPerformed()

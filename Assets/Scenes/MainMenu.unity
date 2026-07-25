@@ -521,14 +521,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 4017436196171046712, guid: a3ec506166068ab41ad9f659bb179227, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5269938348319402241, guid: a3ec506166068ab41ad9f659bb179227, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7870781583905651460, guid: a3ec506166068ab41ad9f659bb179227, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
