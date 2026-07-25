@@ -93,7 +93,12 @@ public class NPCSavedState
 
 public class PlayerSavedState
 {
+    public HappynessLevel PlayerHappynessLevel;
 
+    public PlayerSavedState(HappynessLevel happynessLevel = HappynessLevel.Neutral)
+    {
+        PlayerHappynessLevel = happynessLevel;
+    }
 }
 public class TilemapSavedState
 {

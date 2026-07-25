@@ -27,12 +27,12 @@ public class PlayerAnimatorController : MonoBehaviour
 
     public void SetMovement()
     {
-        Vector2 input = _movement.Input;
-        if (input == Vector2.zero) _isRunning = false;
+        Vector2Int direction = _movement.RunningDirection;
+        if (direction == Vector2Int.zero) _isRunning = false;
         else
         {
             _isRunning = true;
-            _direction = Vector2Int.RoundToInt(input);
+            _direction = direction;
         }
     }
 
@@ -61,9 +61,3 @@ public class PlayerAnimatorController : MonoBehaviour
     }
 }
 
-public enum PlayerState
-{
-    Happy,
-    Neutral,
-    Upset,
-}
