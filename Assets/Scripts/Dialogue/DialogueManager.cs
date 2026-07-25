@@ -1,12 +1,10 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using TMPro;
 
 public class DialogueManager : PersistentSingleton<DialogueManager>
 {
     [SerializeField] private GameObject textBox;
-    [SerializeField] private InputActionReference pressAction;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private float typingSpeed = 0.05f;
     
@@ -16,27 +14,15 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
     private bool isTextFullyVisible = false;
     private int visibleCharacterCount = 0;
 
-    public void OnInteract()
+    public void SetDialogue(string[] newDialogue)
     {
-        if (pressAction != null)
-            pressAction.action.Enable();
-    }
-    
-    private void Update()
-    {
-        HandleInput();
+        textBox.SetActive(true);
+        dialogueLines = newDialogue;
+        currentLineIndex = 0;
+        DisplayCurrentLine();
     }
 
-    private void HandleInput()
-    {
-        if (pressAction == null)
-            return;
-
-        if (pressAction.action.WasPressedThisFrame())
-            OnSkipPerformed();
-    }
-
-    private void OnSkipPerformed()
+    public void OnSkipPerformed()
     {
         if (isTyping)
         {
@@ -68,7 +54,7 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
         {
             dialogueText.text = "";
             textBox.SetActive(false);
-            // Daniel: Return all actors to overwold state?
+            FindAnyObjectByType<StateMachine>().ChangeState<GameplayState>();
         }
     }
 
@@ -97,13 +83,5 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
     private void ShowAllCharacters()
     {
         dialogueText.maxVisibleCharacters = dialogueText.text.Length;
-    }
-
-    public void SetDialogue(string[] newDialogue)
-    {
-        textBox.SetActive(true);
-        dialogueLines = newDialogue;
-        currentLineIndex = 0;
-        DisplayCurrentLine();
     }
 }

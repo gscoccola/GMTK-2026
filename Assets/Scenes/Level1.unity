@@ -119,6 +119,144 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &180631939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 180631941}
+  - component: {fileID: 180631940}
+  m_Layer: 0
+  m_Name: State Machine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &180631940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180631939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2edd6f7bd93a2cf4997809dae2e385de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StateMachine
+  <States>k__BackingField:
+  - {fileID: 573095544}
+  - {fileID: 507403766}
+--- !u!4 &180631941
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180631939}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 573095543}
+  - {fileID: 507403765}
+  - {fileID: 1414417342}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &507403764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 507403765}
+  - component: {fileID: 507403766}
+  m_Layer: 0
+  m_Name: Dialogue State
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &507403765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507403764}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 180631941}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &507403766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507403764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f4e32d0132f604c84591b233350309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueState
+--- !u!1 &573095542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 573095543}
+  - component: {fileID: 573095544}
+  m_Layer: 0
+  m_Name: Gameplay State
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &573095543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573095542}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 180631941}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &573095544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573095542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ea30dd810993994c8b4b65ec8e231aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameplayState
 --- !u!1 &836675318
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,6 +474,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1414417341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1414417342}
+  m_Layer: 0
+  m_Name: Mini-Game State
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1414417342
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414417341}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 180631941}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1609493773
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,7 +629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4381519333745270680, guid: 7e96b54c189aa7146b8936b71ff4f2bd, type: 3}
       propertyPath: orthographic size
-      value: 11.25
+      value: 5.625
       objectReference: {fileID: 0}
     - target: {fileID: 5539480724429628350, guid: 7e96b54c189aa7146b8936b71ff4f2bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -562,6 +731,46 @@ PrefabInstance:
     - target: {fileID: 7363845139535716574, guid: 225d5c0171bb63f4b8c3603b6eed711f, type: 3}
       propertyPath: _deadZone.y
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7882296035500970511, guid: 225d5c0171bb63f4b8c3603b6eed711f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7882296035500970511, guid: 225d5c0171bb63f4b8c3603b6eed711f, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7882296035500970511, guid: 225d5c0171bb63f4b8c3603b6eed711f, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_ActionId
+      value: 0d19aad4-22bb-4170-95bb-30c18e75c4e8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7882296035500970511, guid: 225d5c0171bb63f4b8c3603b6eed711f, type: 3}
+      propertyPath: m_ActionEvents.Array.data[21].m_ActionId
+      value: b45d7a19-a474-4fd8-8329-94d13f55360c
+      objectReference: {fileID: 0}
+    - target: {fileID: 7882296035500970511, guid: 225d5c0171bb63f4b8c3603b6eed711f, type: 3}
+      propertyPath: m_ActionEvents.Array.data[22].m_ActionId
+      value: 66e6ebf4-590e-4460-850b-1ac4afb046d3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7882296035500970511, guid: 225d5c0171bb63f4b8c3603b6eed711f, type: 3}
+      propertyPath: m_ActionEvents.Array.data[23].m_ActionId
+      value: b3f5c923-4911-4458-a7f9-fd1751ceefdb
+      objectReference: {fileID: 0}
+    - target: {fileID: 7882296035500970511, guid: 225d5c0171bb63f4b8c3603b6eed711f, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_ActionName
+      value: 'Gameplay/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7882296035500970511, guid: 225d5c0171bb63f4b8c3603b6eed711f, type: 3}
+      propertyPath: m_ActionEvents.Array.data[21].m_ActionName
+      value: 'Gameplay/Interact[/Keyboard/space,/Keyboard/z]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7882296035500970511, guid: 225d5c0171bb63f4b8c3603b6eed711f, type: 3}
+      propertyPath: m_ActionEvents.Array.data[22].m_ActionName
+      value: 'Dialogue/Interact[/Keyboard/space,/Keyboard/z]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7882296035500970511, guid: 225d5c0171bb63f4b8c3603b6eed711f, type: 3}
+      propertyPath: m_ActionEvents.Array.data[23].m_ActionName
+      value: 'Minigame/Interact[/Keyboard/space,/Keyboard/z]'
       objectReference: {fileID: 0}
     - target: {fileID: 7882296035500970511, guid: 225d5c0171bb63f4b8c3603b6eed711f, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -925,3 +1134,4 @@ SceneRoots:
   - {fileID: 1609493774}
   - {fileID: 1434176331033394585}
   - {fileID: 3153160549482276660}
+  - {fileID: 180631941}

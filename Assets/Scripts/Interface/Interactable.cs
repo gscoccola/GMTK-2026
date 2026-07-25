@@ -11,7 +11,7 @@ public abstract class Interactable : MonoBehaviour
 
     private void Awake()
     {
-        stateMachine = GetComponent<StateMachine>();
+        stateMachine = FindAnyObjectByType<StateMachine>();
     }
 
     public abstract void Interact(PlayerInteraction player);

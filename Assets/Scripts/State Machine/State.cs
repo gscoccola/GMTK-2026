@@ -7,7 +7,7 @@ public class State : MonoBehaviour
     public void Initialize(StateMachine stateMachine)
     {
         StateMachine = stateMachine;
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 
     public virtual void OnEnter()

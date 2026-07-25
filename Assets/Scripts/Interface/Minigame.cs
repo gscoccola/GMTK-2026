@@ -12,6 +12,10 @@ public abstract class Minigame : MonoBehaviour
         finished = false;
     }
 
+    public virtual void OnUpdate(float deltaTime)
+    {
+    }
+
     protected void Finish(bool success)
     {
         if (finished)

@@ -14,13 +14,22 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
+    public void OnUpdate()
     {
-        if (input.x > 0) RunningDirection = Vector2Int.right;
-        else if (input.x < 0) RunningDirection = Vector2Int.left;
-        else if(input.y > 0) RunningDirection = Vector2Int.up;
-        else if(input.y < 0) RunningDirection = Vector2Int.down;
-        else RunningDirection = Vector2Int.zero;
+        if (input.x > 0)
+            RunningDirection = Vector2Int.right;
+        
+        else if (input.x < 0)
+            RunningDirection = Vector2Int.left;
+        
+        else if(input.y > 0)
+            RunningDirection = Vector2Int.up;
+        
+        else if(input.y < 0)
+            RunningDirection = Vector2Int.down;
+        
+        else
+            RunningDirection = Vector2Int.zero;
 
 
         rb.linearVelocity = (Vector2)RunningDirection * speed;

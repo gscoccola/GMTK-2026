@@ -7,11 +7,8 @@ public class NPC : Interactable
 
     public override void Interact(PlayerInteraction player)
     {
-        Debug.Log("NPC");
-        Debug.Log("There should probably be some NPC states here");
+        // Daniel: Can be modified to include the npc's name if you want to.
         DialogueManager.Instance.SetDialogue(dialogue);
-        //stateMachine.ChangeState<DialogueState>();
-        // Daniel: Should this apply to all actors?
-        DialogueManager.Instance.OnInteract();
+        stateMachine.ChangeState<DialogueState>();
     }
 }
