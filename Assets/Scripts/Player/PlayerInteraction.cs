@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -25,18 +24,9 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
-    public void OnInteract(InputAction.CallbackContext context)
+    public void OnInteract()
     {
-        if (context.started)
-        {
-            if (currentInteractable != null)
-            {
-                currentInteractable.Interact(this);
-            }
-        }
-
-        
-
-        //Dzung: I dont see a need for checking if it is an NPC, you can add the code to the Interact() in NPC.cs
+        if (currentInteractable != null)
+            currentInteractable.Interact(this);
     }
 }

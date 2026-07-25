@@ -24,7 +24,7 @@ public class InputManager : MonoBehaviour
     public void EnableGameplay()
     {
         DisableAll();
-        Actions.Gameplay.Enable();
+        Actions.Player.Enable();
     }
 
     public void EnableDialogue()
@@ -47,7 +47,7 @@ public class InputManager : MonoBehaviour
 
     private void DisableAll()
     {
-        Actions.Gameplay.Disable();
+        Actions.Player.Disable();
         Actions.Dialogue.Disable();
         Actions.Minigame.Disable();
         Actions.UI.Disable();

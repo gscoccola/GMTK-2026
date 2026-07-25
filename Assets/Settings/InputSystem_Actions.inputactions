@@ -39,7 +39,7 @@
                     "id": "852140f2-7766-474d-8707-702459ba45f3",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "Hold",
+                    "interactions": "",
                     "initialStateCheck": false
                 }
             ],
@@ -289,6 +289,95 @@
                 {
                     "name": "",
                     "id": "e19f165f-fc53-4870-87ad-ae86a5cd6718",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5525a3d9-da07-4a90-9012-f26eee31ef48",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Dialogue",
+            "id": "f8af932d-9027-4d15-bf67-c50922bfc114",
+            "actions": [
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "408fbf39-a9b0-4113-9d37-34b8a6b82bfb",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6b56af4b-8a5e-4ee7-883d-8fea28a4a0ac",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "19eca158-d3d7-4619-a909-9da129555551",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Minigame",
+            "id": "40d0e49b-35c3-4cba-accb-71ab4c4b5062",
+            "actions": [
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "a863de3b-e1f0-40bb-a383-1f9fd3652454",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e8a3f19f-aa3e-4f2c-87a3-a5197c3c7613",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "66546315-6202-48c5-961e-327b7e758cb4",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",

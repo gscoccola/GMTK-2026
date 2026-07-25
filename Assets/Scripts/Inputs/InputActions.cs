@@ -125,7 +125,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""id"": ""852140f2-7766-474d-8707-702459ba45f3"",
                     ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": ""Hold"",
+                    ""interactions"": """",
                     ""initialStateCheck"": false
                 }
             ],
@@ -375,6 +375,95 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""e19f165f-fc53-4870-87ad-ae86a5cd6718"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5525a3d9-da07-4a90-9012-f26eee31ef48"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Dialogue"",
+            ""id"": ""f8af932d-9027-4d15-bf67-c50922bfc114"",
+            ""actions"": [
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""408fbf39-a9b0-4113-9d37-34b8a6b82bfb"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""6b56af4b-8a5e-4ee7-883d-8fea28a4a0ac"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""19eca158-d3d7-4619-a909-9da129555551"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Minigame"",
+            ""id"": ""40d0e49b-35c3-4cba-accb-71ab4c4b5062"",
+            ""actions"": [
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""a863de3b-e1f0-40bb-a383-1f9fd3652454"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""e8a3f19f-aa3e-4f2c-87a3-a5197c3c7613"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""66546315-6202-48c5-961e-327b7e758cb4"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -991,6 +1080,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+        // Dialogue
+        m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
+        m_Dialogue_Interact = m_Dialogue.FindAction("Interact", throwIfNotFound: true);
+        // Minigame
+        m_Minigame = asset.FindActionMap("Minigame", throwIfNotFound: true);
+        m_Minigame_Interact = m_Minigame.FindAction("Interact", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1009,6 +1104,8 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     ~@InputActions()
     {
         UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, InputActions.Player.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Dialogue.enabled, "This will cause a leak and performance issues, InputActions.Dialogue.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Minigame.enabled, "This will cause a leak and performance issues, InputActions.Minigame.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, InputActions.UI.Disable() has not been called.");
     }
 
@@ -1210,6 +1307,198 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="PlayerActions" /> instance referencing this action map.
     /// </summary>
     public PlayerActions @Player => new PlayerActions(this);
+
+    // Dialogue
+    private readonly InputActionMap m_Dialogue;
+    private List<IDialogueActions> m_DialogueActionsCallbackInterfaces = new List<IDialogueActions>();
+    private readonly InputAction m_Dialogue_Interact;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "Dialogue".
+    /// </summary>
+    public struct DialogueActions
+    {
+        private @InputActions m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public DialogueActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "Dialogue/Interact".
+        /// </summary>
+        public InputAction @Interact => m_Wrapper.m_Dialogue_Interact;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_Dialogue; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="DialogueActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(DialogueActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="DialogueActions" />
+        public void AddCallbacks(IDialogueActions instance)
+        {
+            if (instance == null || m_Wrapper.m_DialogueActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_DialogueActionsCallbackInterfaces.Add(instance);
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="DialogueActions" />
+        private void UnregisterCallbacks(IDialogueActions instance)
+        {
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="DialogueActions.UnregisterCallbacks(IDialogueActions)" />.
+        /// </summary>
+        /// <seealso cref="DialogueActions.UnregisterCallbacks(IDialogueActions)" />
+        public void RemoveCallbacks(IDialogueActions instance)
+        {
+            if (m_Wrapper.m_DialogueActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="DialogueActions.AddCallbacks(IDialogueActions)" />
+        /// <seealso cref="DialogueActions.RemoveCallbacks(IDialogueActions)" />
+        /// <seealso cref="DialogueActions.UnregisterCallbacks(IDialogueActions)" />
+        public void SetCallbacks(IDialogueActions instance)
+        {
+            foreach (var item in m_Wrapper.m_DialogueActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_DialogueActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="DialogueActions" /> instance referencing this action map.
+    /// </summary>
+    public DialogueActions @Dialogue => new DialogueActions(this);
+
+    // Minigame
+    private readonly InputActionMap m_Minigame;
+    private List<IMinigameActions> m_MinigameActionsCallbackInterfaces = new List<IMinigameActions>();
+    private readonly InputAction m_Minigame_Interact;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "Minigame".
+    /// </summary>
+    public struct MinigameActions
+    {
+        private @InputActions m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public MinigameActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "Minigame/Interact".
+        /// </summary>
+        public InputAction @Interact => m_Wrapper.m_Minigame_Interact;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_Minigame; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="MinigameActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(MinigameActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="MinigameActions" />
+        public void AddCallbacks(IMinigameActions instance)
+        {
+            if (instance == null || m_Wrapper.m_MinigameActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_MinigameActionsCallbackInterfaces.Add(instance);
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="MinigameActions" />
+        private void UnregisterCallbacks(IMinigameActions instance)
+        {
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="MinigameActions.UnregisterCallbacks(IMinigameActions)" />.
+        /// </summary>
+        /// <seealso cref="MinigameActions.UnregisterCallbacks(IMinigameActions)" />
+        public void RemoveCallbacks(IMinigameActions instance)
+        {
+            if (m_Wrapper.m_MinigameActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="MinigameActions.AddCallbacks(IMinigameActions)" />
+        /// <seealso cref="MinigameActions.RemoveCallbacks(IMinigameActions)" />
+        /// <seealso cref="MinigameActions.UnregisterCallbacks(IMinigameActions)" />
+        public void SetCallbacks(IMinigameActions instance)
+        {
+            foreach (var item in m_Wrapper.m_MinigameActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_MinigameActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="MinigameActions" /> instance referencing this action map.
+    /// </summary>
+    public MinigameActions @Minigame => new MinigameActions(this);
 
     // UI
     private readonly InputActionMap m_UI;
@@ -1509,6 +1798,36 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnAttack(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Interact" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnInteract(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Dialogue" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="DialogueActions.AddCallbacks(IDialogueActions)" />
+    /// <seealso cref="DialogueActions.RemoveCallbacks(IDialogueActions)" />
+    public interface IDialogueActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "Interact" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnInteract(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Minigame" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="MinigameActions.AddCallbacks(IMinigameActions)" />
+    /// <seealso cref="MinigameActions.RemoveCallbacks(IMinigameActions)" />
+    public interface IMinigameActions
+    {
         /// <summary>
         /// Method invoked when associated input action "Interact" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>

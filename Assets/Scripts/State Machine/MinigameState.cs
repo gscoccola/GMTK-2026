@@ -6,6 +6,8 @@ public class MinigameState : State
 
     public override void OnEnter()
     {
+        InputManager.Instance.EnableDialogue();
+        //InputManager.Instance.Actions.Minigame.Interact.performed += OnAdvance;
     }
 
     public override void OnUpdate(float deltaTime)
@@ -15,5 +17,6 @@ public class MinigameState : State
 
     public override void OnExit()
     {
+        //InputManager.Instance.Actions.Dialogue.Interact.performed -= OnAdvance;
     }
 }

@@ -13,7 +13,8 @@ public class NPC : Interactable
 
     private void Start()
     {
-        _currentMission = _info.Missions[0];
+        if (_info != null && _info.Missions != null && _info.Missions.Length > 0)
+            _currentMission = _info.Missions[0];
     }
 
     public void OnMissionComplete()
@@ -32,8 +33,8 @@ public class NPC : Interactable
             DialogueManager.Instance.SetDialogue(dialogue);
             stateMachine.ChangeState<DialogueState>();
         }
-        
+
         else
-        DialogueManager.Instance.OnInteract();
+            DialogueManager.Instance.OnInteract();
     }
 }

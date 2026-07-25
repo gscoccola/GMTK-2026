@@ -15,9 +15,9 @@ public class GameplayState : State
     public override void OnEnter()
     {
         InputManager.Instance.EnableGameplay();
-        InputManager.Instance.Actions.Gameplay.Move.performed += playerMovement.Move;
-        InputManager.Instance.Actions.Gameplay.Move.canceled += playerMovement.Move;
-        InputManager.Instance.Actions.Gameplay.Interact.performed += OnInteract;
+        InputManager.Instance.Actions.Player.Move.performed += playerMovement.Move;
+        InputManager.Instance.Actions.Player.Move.canceled += playerMovement.Move;
+        InputManager.Instance.Actions.Player.Interact.performed += OnInteract;
     }
 
     public override void OnUpdate(float deltaTime)
@@ -27,13 +27,13 @@ public class GameplayState : State
 
     public override void OnExit()
     {
-        InputManager.Instance.Actions.Gameplay.Move.performed -= playerMovement.Move;
-        InputManager.Instance.Actions.Gameplay.Move.canceled -= playerMovement.Move;
-        InputManager.Instance.Actions.Gameplay.Interact.performed -= OnInteract;
+        InputManager.Instance.Actions.Player.Move.performed -= playerMovement.Move;
+        InputManager.Instance.Actions.Player.Move.canceled -= playerMovement.Move;
+        InputManager.Instance.Actions.Player.Interact.performed -= OnInteract;
     }
 
     private void OnInteract(InputAction.CallbackContext ctx)
     {
-        playerInteraction.Interact();
+        playerInteraction.OnInteract();
     }
 }
