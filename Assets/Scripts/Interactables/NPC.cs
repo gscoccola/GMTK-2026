@@ -12,5 +12,6 @@ public class NPC : Interactable
         DialogueManager.Instance.SetDialogue(dialogue);
         //stateMachine.ChangeState<DialogueState>();
         // Daniel: Should this apply to all actors?
+        DialogueManager.Instance.OnInteract();
     }
 }
