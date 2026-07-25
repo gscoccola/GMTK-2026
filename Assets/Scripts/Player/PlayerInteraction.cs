@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    private Interactable currentInteractable;
+    [SerializeField][ReadOnly] private Interactable currentInteractable;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -24,12 +25,17 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
-    public void Interact()
+    public void OnInteract(InputAction.CallbackContext context)
     {
-        if (currentInteractable != null)
+        if (context.started)
         {
-            currentInteractable.Interact(this);
+            if (currentInteractable != null)
+            {
+                currentInteractable.Interact(this);
+            }
         }
+
+        
 
         //Dzung: I dont see a need for checking if it is an NPC, you can add the code to the Interact() in NPC.cs
     }

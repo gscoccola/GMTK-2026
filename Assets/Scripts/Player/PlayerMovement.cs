@@ -31,6 +31,9 @@ public class PlayerMovement : MonoBehaviour
         else
             RunningDirection = Vector2Int.zero;
 
+        if(RunningDirection == Vector2Int.right || RunningDirection == Vector2Int.left) rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+        else if(RunningDirection == Vector2Int.up || RunningDirection == Vector2Int.down) rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+        else rb.constraints = RigidbodyConstraints2D.FreezePosition | RigidbodyConstraints2D.FreezeRotation;
 
         rb.linearVelocity = (Vector2)RunningDirection * speed;
     }

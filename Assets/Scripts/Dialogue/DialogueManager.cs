@@ -9,6 +9,7 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
     [SerializeField] private float typingSpeed = 0.05f;
     
     private string[] dialogueLines;
+    public bool HasLinesLoaded => dialogueLines != null;
     private int currentLineIndex = 0;
     private bool isTyping = false;
     private bool isTextFullyVisible = false;
@@ -20,6 +21,16 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
         dialogueLines = newDialogue;
         currentLineIndex = 0;
         DisplayCurrentLine();
+    }
+    
+    private void Start()
+    {
+        textBox.SetActive(false);
+    }
+
+    public void OnInteract()
+    {
+        OnSkipPerformed();
     }
 
     public void OnSkipPerformed()
@@ -52,6 +63,7 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
 
         else
         {
+            dialogueLines = null;
             dialogueText.text = "";
             textBox.SetActive(false);
             FindAnyObjectByType<StateMachine>().ChangeState<GameplayState>();
