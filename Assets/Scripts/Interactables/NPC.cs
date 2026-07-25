@@ -4,7 +4,25 @@ public class NPC : Interactable
 {
     [SerializeField] private string npcName;
     [SerializeField] private string[] dialogue;
-    private bool _isInteracting;
+    [SerializeField] private NPCInfoSO _info;
+
+    [SerializeField] private NPCMission _currentMission;
+    [SerializeField][ReadOnly] private bool _wasBriefed;
+    private int _currentMissionIndex;
+
+
+    private void Start()
+    {
+        _currentMission = _info.Missions[0];
+    }
+
+    public void OnMissionComplete()
+    {
+        _currentMissionIndex++;
+        _currentMission = _info.Missions[_currentMissionIndex];
+        _wasBriefed = false;
+
+    }
 
     public override void Interact(PlayerInteraction player)
     {
