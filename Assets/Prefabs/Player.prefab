@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 7882296035500970511}
   - component: {fileID: 8247536060219257491}
   - component: {fileID: 3725046001679047336}
+  - component: {fileID: 7363845139535716574}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -289,7 +290,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &6543178116355338336
 MonoBehaviour:
@@ -304,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   speed: 5
-  Input: {x: 0, y: 0}
+  RunningDirection: {x: 0, y: 0}
 --- !u!114 &7882296035500970511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,3 +474,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d00043d1075734e881dd9a0e70dad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimatorController
+--- !u!114 &7363845139535716574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8965312928955809032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cfa90e6cdb00bb469edf01839e6415b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraController
+  _deadZone: {x: 19, y: 10}
