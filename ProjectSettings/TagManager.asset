@@ -38,8 +38,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: SpaceBackground
+    uniqueID: 3567911709
+    locked: 0
+  - name: ShipBackground
+    uniqueID: 1740463201
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: ShipForeground
+    uniqueID: 523412651
     locked: 0
   m_RenderingLayers:
   - Default

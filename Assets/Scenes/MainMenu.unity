@@ -169,10 +169,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.PixelPerfectCamera
   m_ComponentVersion: 1
-  m_AssetsPPU: 100
-  m_RefResolutionX: 640
-  m_RefResolutionY: 360
-  m_CropFrame: 0
+  m_AssetsPPU: 16
+  m_RefResolutionX: 320
+  m_RefResolutionY: 180
+  m_CropFrame: 3
   m_GridSnapping: 1
   m_FilterMode: 0
   m_UpscaleRT: 0
@@ -267,7 +267,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.8
+  orthographic size: 5.625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -574,6 +574,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 436701179712558126, guid: c64a8a6cca9877c4f9aaac33d16d9044, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 120199447}
     - target: {fileID: 1857696575359336085, guid: c64a8a6cca9877c4f9aaac33d16d9044, type: 3}
       propertyPath: m_Pivot.x
       value: 0
