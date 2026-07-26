@@ -88,16 +88,20 @@ public class TaskManager : Singleton<TaskManager>
     private void AssignNextTask()
     {
         TaskGiverId giver;
-        Task task;
+        Task task = null;
         if (Random.Range(0, 1f) <= _npcTaskChance && _availableGivers.Count > 0)
         {
             if (_availableGivers.Count == 0) Debug.LogWarning("npc without tasks");
             giver = _availableGivers[Random.Range(0, _availableGivers.Count)];
-            task = _tasks[giver][0];
+            if(_tasks[giver].Count > 0)
+            {
+                task = _tasks[giver][0];
 
-            _npcs[task.GiverId].AssignTask(task.Id);
-            _availableGivers.Remove(giver);
-            Debug.Log("task given from npc " + giver + " , " + task.Id);
+                _npcs[task.GiverId].AssignTask(task.Id);
+                _availableGivers.Remove(giver);
+                Debug.Log("task given from npc " + giver + " , " + task.Id);
+            }
+            
         }
         else if (_tasks[TaskGiverId.Ship].Count > 0)
         {
@@ -110,7 +114,7 @@ public class TaskManager : Singleton<TaskManager>
             Debug.Log("no tasks available");
             return;
         }
-        task.Activate();
+        if (task!= null) task.Activate();
         _tasks[giver].Remove(task);
         _tasks[giver].Add(task);
     }

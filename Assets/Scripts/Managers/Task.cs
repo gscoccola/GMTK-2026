@@ -34,6 +34,7 @@ public enum TaskId
     CaptainBottle,
     CaptainBoots,
     CaptainMusic,
+
     ChefStir,
     ChefHold,
     ChefChop,
@@ -49,4 +50,14 @@ public enum TaskId
     AlienMove,
     AlienHold,
     AlienSign
+
+    Mech1, Mech2, Mech3,
+
+    Sci1, Sci2, Sci3,
+
+    Wpn1, Wpn2, Wpn3,
+
+    Ali1, Ali2, Ali3,
+
+    Minigame1, Minigame2, Minigame3, Minigame4, Minigame5, Minigame6,
 }

@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 953f267c8658fa14abf1746824cdb755, type: 3}
+  m_Name: Weapons
+  m_EditorClassIdentifier: Assembly-CSharp::NPCInfoSO
+  TaskDialogs:
+  - ID: 12
+    Briefing:
+    - Comms dish is out of alignment. Sort it out, I'm needed here.
+    Pending:
+    - Eleven reports to the captain this month, and not one reply. That's trust!
+    Succeded:
+    - That's what I like to see. I'll put your name in the log.
+    Failed:
+    - '*static* Dish is gone. This is getting reported.'
+  - ID: 13
+    Briefing:
+    - Blast door's stuck open, again! I shouldn't have to explain to you what to
+      do!
+    Pending:
+    - The scientist says my eyes are funny. I don't know what he means.
+    Succeded:
+    - Sealed. I'd have done it about the same way.
+    Failed:
+    - '*static* Door''s locked for good. For the record, I identified this.'
+  - ID: 14
+    Briefing:
+    - Coolant valve won't hold. Someone's got to hold the line and I've selected
+      you.
+    Pending:
+    - I polish the turret every morning. Every. Morning.
+    Succeded:
+    - Good job soldier.
+    Failed:
+    - '*static* Valve''s blown. This is a communication breakdown.'

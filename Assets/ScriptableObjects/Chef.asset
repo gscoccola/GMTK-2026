@@ -17,9 +17,9 @@ MonoBehaviour:
     Briefing:
     - Hold. Don't ask what.
     Pending:
-    - I said stir the soup
+    - Not done.
     Succeded:
-    - Great job!
+    - Stop. It's good.
     Failed:
     - The soup got clumpy!
   - ID: 3
