@@ -111,4 +111,5 @@ public enum TaskGiverId
     Chef,
     Alien1,
     Alien2,
+    Alien3,
 }
