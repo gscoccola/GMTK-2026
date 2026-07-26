@@ -10569,7 +10569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TaskManager
   _initialTimer: 5
-  _taskTimer: 15
+  _taskTimer: 9
   _npcTaskChance: 1
   _shipTasks: 0
 --- !u!1 &6142029116533336773
