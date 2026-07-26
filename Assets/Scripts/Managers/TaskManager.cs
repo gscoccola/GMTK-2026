@@ -44,8 +44,6 @@ public class TaskManager : Singleton<TaskManager>
 
     public void AddTask(Task task)
     {
-        Debug.Log(_tasks);
-        Debug.Log(task.GiverId);
         _tasks[task.GiverId].Add(task);
     }
 
@@ -67,6 +65,7 @@ public class TaskManager : Singleton<TaskManager>
     {
         if (!_hasShuffled)
         {
+            _hasShuffled = true;
             _availableGivers.Shuffle();
             _tasks[TaskGiverId.Ship].Shuffle();
             foreach (var id in _availableGivers)
@@ -94,12 +93,11 @@ public class TaskManager : Singleton<TaskManager>
         {
             if (_availableGivers.Count == 0) Debug.LogWarning("npc without tasks");
             giver = _availableGivers[Random.Range(0, _availableGivers.Count)];
-            Debug.Log(giver.ToString() + _tasks[giver].Count);
             task = _tasks[giver][0];
 
             _npcs[task.GiverId].AssignTask(task.Id);
             _availableGivers.Remove(giver);
-            Debug.Log("task given from npc " + giver);
+            Debug.Log("task given from npc " + giver + " , " + task.Id);
         }
         else if (_tasks[TaskGiverId.Ship].Count > 0)
         {
