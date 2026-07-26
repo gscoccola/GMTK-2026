@@ -15,28 +15,34 @@ MonoBehaviour:
   TaskDialogs:
   - ID: 0
     Briefing:
-    - Get my bottle
+    - You, robot! My bottle, look at it. See what's wrong?
     Pending:
-    - my bottle
+    - Still holding an empty bottle...
     Succeded:
-    - Thanks for the bottle
+    - About time! You know, I could do your job... but this hammock's too comfy.
     Failed:
-    - didnt get my bottle
-  - ID: 1
-    Briefing:
-    - Get my hat
-    Pending:
-    - my hat
-    Succeded:
-    - Thanks for the hat
-    Failed:
-    - didnt get my hat
+    - Drasted clunk of metal! I got up for it myself and knocked something loose
+      down here.
   - ID: 2
     Briefing:
-    - Get my music
+    - Music's too quiet. Turn it up. And don't look at me like that, I know how the
+      system works!
     Pending:
-    - my music
+    - The weapons officer loves to send me reports, even though haven't used the
+      weapons in weeks.
     Succeded:
-    - Thanks for the music
+    - Now that's a captain's ship!
     Failed:
-    - didnt get my music
+    - ' I did the panel myself and now there''s a woman counting backwards! Far too
+      complicated...'
+  - ID: 1
+    Briefing:
+    - A captain in bare feet doesn't command anything, and I command this ship. Find
+      my boots!
+    Pending:
+    - That scientist sure does like to waddle funny, but I respect it. I've got a
+      waddle meself, you know.
+    Succeded:
+    - Finally, I knew you were good for somethin'.
+    Failed:
+    - You beeping sack of bolts, what did we make you for!?

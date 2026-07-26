@@ -32,9 +32,21 @@ public class Task : MonoBehaviour
 public enum TaskId
 {
     CaptainBottle,
-    CaptainHat,
+    CaptainBoots,
     CaptainMusic,
     ChefStir,
-    ChefTaste,
+    ChefHold,
     ChefChop,
+    MechanicPatch,
+    MechanicReroute,
+    MechanicCrank,
+    ScientistStablize,
+    ScientistCatch,
+    ScientistReboot,
+    WeaponsRealign,
+    WeaponsOverride,
+    WeaponsHold,
+    AlienMove,
+    AlienHold,
+    AlienSign
 }

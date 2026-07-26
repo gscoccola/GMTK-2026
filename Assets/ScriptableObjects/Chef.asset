@@ -13,30 +13,30 @@ MonoBehaviour:
   m_Name: Chef
   m_EditorClassIdentifier: Assembly-CSharp::NPCInfoSO
   TaskDialogs:
-  - ID: 3
+  - ID: 4
     Briefing:
-    - Stir the soup
+    - Hold. Don't ask what.
     Pending:
     - I said stir the soup
     Succeded:
     - Great job!
     Failed:
     - The soup got clumpy!
-  - ID: 4
+  - ID: 3
     Briefing:
-    - Tast the soup
+    - Stir.
     Pending:
-    - Have a taste
+    - Not done.
     Succeded:
-    - Delicious, isn't it?
+    - Stop. It's good.
     Failed:
-    - Fine, I'll do it myself
+    - Somebody stopped stirring.
   - ID: 5
     Briefing:
-    - Chop these onions
+    - Too slow. Faster.
     Pending:
-    - They won't chop themselves
+    - ...?
     Succeded:
-    - Impeccable technique!
+    - Done. Meal ready.
     Failed:
-    - You're a lazy robot
+    - Grease fire.
