@@ -8,6 +8,8 @@ public class TaskManager : Singleton<TaskManager>
     [SerializeField] private float _taskTimer = 10f;
     [SerializeField] private float _npcTaskChance = 1f;
 
+    [SerializeField] private Task[] _taskGameobjects;
+
     //[SerializeField] [ReadOnly] private List<Task> _availableShipTasks = new();
     //private List<Task> _assignedTasks = new();
 
@@ -29,8 +31,8 @@ public class TaskManager : Singleton<TaskManager>
 
     private void Start()
     {
-        _availableGivers.Shuffle();
         _timeleft = _initialTimer;
+
     }
 
     public void AddNPC(TaskGiverId npcId, NPC npc)
@@ -42,6 +44,8 @@ public class TaskManager : Singleton<TaskManager>
 
     public void AddTask(Task task)
     {
+        Debug.Log(_tasks);
+        Debug.Log(task.GiverId);
         _tasks[task.GiverId].Add(task);
     }
 
@@ -63,10 +67,15 @@ public class TaskManager : Singleton<TaskManager>
     {
         if (!_hasShuffled)
         {
+            _availableGivers.Shuffle();
             _tasks[TaskGiverId.Ship].Shuffle();
             foreach (var id in _availableGivers)
             {
                 _tasks[id].Shuffle();
+                foreach (var task in _taskGameobjects)
+                {
+                    AddTask(task);
+                }
             }
         }
         _timeleft -= Time.deltaTime;
@@ -85,6 +94,7 @@ public class TaskManager : Singleton<TaskManager>
         {
             if (_availableGivers.Count == 0) Debug.LogWarning("npc without tasks");
             giver = _availableGivers[Random.Range(0, _availableGivers.Count)];
+            Debug.Log(giver.ToString() + _tasks[giver].Count);
             task = _tasks[giver][0];
 
             _npcs[task.GiverId].AssignTask(task.Id);
