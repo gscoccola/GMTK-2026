@@ -1,6 +1,16 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/ScriptableObjects/Mechanic.asset.meta
 guid: aa0619ab58791a24f89c933adc577fc0
+========
+<<<<<<<< Updated upstream:Assets/Tiles/Standard_internalwalls.asset.meta
+guid: fe3c0973913b6634cbeee0f0c6871d39
+>>>>>>>> Dzung:Assets/Tiles/Standard_internalwalls.asset.meta
 NativeFormatImporter:
+========
+guid: f274c04662c0ea84badcb479ba584cc9
+folderAsset: yes
+DefaultImporter:
+>>>>>>>> Stashed changes:Assets/Animations/FX.meta
   externalObjects: {}
   mainObjectFileID: 11400000
   userData: 

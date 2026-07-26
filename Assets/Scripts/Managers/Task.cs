@@ -1,11 +1,9 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Task : MonoBehaviour
 {
     public TaskId Id;
     public TaskGiverId GiverId;
-    public UnityEvent OnActivate = new UnityEvent();
 
     /*private void Start()
     {
@@ -24,7 +22,7 @@ public class Task : MonoBehaviour
 
     public void Activate()
     {
-        OnActivate?.Invoke();
+
     }
 }
 

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Art/FX/explosion 32x32 png seq/explosion1 (11).png.meta
 guid: fc622e429232df94b927058b80bd6189
+========
+guid: 2122d3b08385a9f488e637e67e497560
+>>>>>>>> Dzung:Assets/Art/Tiles/Foreground/Standard_internalwalls.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

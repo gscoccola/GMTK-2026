@@ -19,7 +19,7 @@ public class NPC : Interactable
 
     private void Awake()
     {
-        
+        //stateMachine = FindAnyObjectByType<StateMachine>();
         _exclamationMark = transform.GetChild(0).gameObject;
 
         foreach (var dialog in _info.TaskDialogs)
@@ -89,6 +89,7 @@ public class NPC : Interactable
         
         else
         {
+            stateMachine.ChangeState<DialogueState>();
             DialogueManager.Instance.OnInteract(out bool dialogComplete);
             if (dialogComplete) SetInactive();
         }
