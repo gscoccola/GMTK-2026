@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Tiles/FloorDark.asset.meta
 guid: d130d2d6bf0b6f546853498032921d16
+========
+guid: ad4a06479b73ce048a6f3e4915c4af3f
+>>>>>>>> main:Assets/ScriptableObjects/Alien2.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

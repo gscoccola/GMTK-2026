@@ -22,7 +22,8 @@ public class MinigameManager : MonoBehaviour
     // But otherwise it functions as normal.
     public void StartMinigame(GameObject minigame, System.Action<bool> callback)
     {
-        currentMinigame = Instantiate(minigame).GetComponent<Minigame>();
+        Vector3 postion = Camera.main.transform.position;
+        currentMinigame = Instantiate(minigame, new Vector3(postion.x, postion.y , 0f), Quaternion.identity).GetComponent<Minigame>();
         currentMinigame.OnMinigameFinished += callback;
         currentMinigame.OnMinigameFinished += CloseMinigame;
 

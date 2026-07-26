@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,6 +7,7 @@ public class Task : MonoBehaviour
     public TaskId Id;
     public TaskGiverId GiverId;
     public UnityEvent OnActivate = new UnityEvent();
+    [SerializeField] private GameObject Minigame;
 
     /*private void Start()
     {
@@ -25,6 +27,11 @@ public class Task : MonoBehaviour
     public void Activate()
     {
         OnActivate?.Invoke();
+        if (GiverId == TaskGiverId.Ship) MinigameManager.Instance.StartMinigame(Minigame, Finished);
+    }
+
+    private void Finished(bool success) {
+        TaskManager.Instance.OnTaskFinished(this, success);
     }
 }
 
