@@ -936,6 +936,10 @@ PrefabInstance:
       value: NPC Test
       objectReference: {fileID: 0}
     - target: {fileID: 3621266562199507941, guid: f0b5b109746f8d846ab027c53186aae3, type: 3}
+      propertyPath: dialougManager
+      value: 
+      objectReference: {fileID: 2082436421629532498, guid: a3ec506166068ab41ad9f659bb179227, type: 3}
+    - target: {fileID: 3621266562199507941, guid: f0b5b109746f8d846ab027c53186aae3, type: 3}
       propertyPath: dialogue.Array.size
       value: 3
       objectReference: {fileID: 0}
