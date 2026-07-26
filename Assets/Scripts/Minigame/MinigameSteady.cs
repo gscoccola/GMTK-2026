@@ -14,7 +14,6 @@ public class MinigameSteady : Minigame
     [SerializeField] private float shoveInterval = 2f;
     [SerializeField] private float shoveStrength = 0.15f;
 
-    [SerializeField] private InputActionReference holdAction;
     [SerializeField] private RectTransform bandRect;
     [SerializeField] private RectTransform needleRect;
     [SerializeField] private Image progressFill;
@@ -29,6 +28,7 @@ public class MinigameSteady : Minigame
     private float elapsed;
     private float nextShove;
     private int dir;
+    private float dt;
 
     public float BandMin => bandCenter - bandWidth * 0.5f;
     public float BandMax => bandCenter + bandWidth * 0.5f;
@@ -36,7 +36,6 @@ public class MinigameSteady : Minigame
     public override void StartMinigame()
     {
         base.StartMinigame();
-        holdAction.action.Enable();
         meter = bandCenter;
         inBandTime = elapsed = 0f;
         dir = Random.value > 0.5f ? 1 : -1;
@@ -44,24 +43,17 @@ public class MinigameSteady : Minigame
         UpdateBandUI();
     }
 
-    private void OnDisable()
-    {
-        holdAction.action.Disable();
-    }
-
-    private void Update()
+    public override void OnUpdate(float deltaTime)
     {
         if (finished)
             return;
-        
-        elapsed += Time.deltaTime;
-        meter += dir * driftSpeed * Time.deltaTime;
+
+        dt = deltaTime;
+        elapsed += dt;
+        meter += dir * driftSpeed * dt;
 
         if (!escalated && elapsed > timeLimit / 2)
             ApplyEscalation();
-
-        if (holdAction.action.IsPressed())
-            meter -= dir * holdSpeed * Time.deltaTime;
 
         if (elapsed >= nextShove)
         {
@@ -73,8 +65,8 @@ public class MinigameSteady : Minigame
         bool inBand = meter >= BandMin && meter <= BandMax;
 
         if (inBand)
-            inBandTime += Time.deltaTime;
-        
+            inBandTime += dt;
+
         else
             inBandTime = 0f;
 
@@ -82,9 +74,14 @@ public class MinigameSteady : Minigame
 
         if (inBandTime >= requiredTime)
             Finish(true);
-        
+
         else if (elapsed >= timeLimit)
             Finish(false);
+    }
+
+    public override void HandleInput()
+    {
+        meter -= dir * holdSpeed * dt;
     }
 
     private void UpdateBandUI()

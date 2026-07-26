@@ -45,18 +45,17 @@ public class MinigameConnect : Minigame
             node.Initialize(this);
     }
 
-    private void Update()
+    public override void OnUpdate(float deltaTime)
     {
-        HandleTimer();
+        HandleTimer(deltaTime);
         HandleShuffle();
         RefreshLockedLines();
         RefreshActiveLine();
     }
 
-    private void HandleTimer()
+    private void HandleTimer(float deltaTime)
     {
-        // Daniel: I think the timer should be elsewhere to apply for all the mini-games.
-        timer -= Time.deltaTime;
+        timer -= deltaTime;
 
         if (timer <= 0f)
         {

@@ -31,7 +31,7 @@ public class MinigameTarget : Minigame
         allTargets.Clear();
     }
 
-    private void Update()
+    public override void OnUpdate(float deltaTime)
     {
        // HandleEscalation();
         HandleWinCondition();

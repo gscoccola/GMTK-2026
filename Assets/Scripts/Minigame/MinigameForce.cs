@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 public class MinigameForce : Minigame
 {
     [SerializeField] private Image meterBar;
-    [SerializeField] private InputActionReference mashAction;
     [SerializeField] private float timeLimit = 5f;
     [SerializeField] private float pressAmount = 1f;
     [SerializeField] private float startingTarget = 20f;
@@ -28,47 +27,31 @@ public class MinigameForce : Minigame
         currentTarget = startingTarget;
         currentDrain = startingDrainPerSecond;
         timeRemaining = timeLimit;
-
         escalated = false;
         isRunning = true;
-
-        if (mashAction != null)
-            mashAction.action.Enable();
-
         UpdateUI();
     }
 
-    private void OnDisable()
-    {
-        if (mashAction != null)
-            mashAction.action.Disable();
-    }
-
-    private void Update()
+    public override void OnUpdate(float deltaTime)
     {
         if (!isRunning)
             return;
 
-        HandleInput();
-        HandleDrain();
-        HandleTimer();
+        HandleDrain(deltaTime);
+        HandleTimer(deltaTime);
         HandleEscalation();
         HandleWinCondition();
         UpdateUI();
     }
 
-    private void HandleInput()
+    public override void HandleInput()
     {
-        if (mashAction == null)
-            return;
-
-        if (mashAction.action.WasPressedThisFrame())
-            PressButton();
+        PressButton();
     }
 
-    private void HandleTimer()
+    private void HandleTimer(float deltaTime)
     {
-        timeRemaining -= Time.deltaTime;
+        timeRemaining -= deltaTime;
 
         if (timeRemaining <= 0f)
         {
@@ -82,9 +65,9 @@ public class MinigameForce : Minigame
         }
     }
 
-    private void HandleDrain()
+    private void HandleDrain(float deltaTime)
     {
-        currentMeter -= currentDrain * Time.deltaTime;
+        currentMeter -= currentDrain * deltaTime;
         currentMeter = Mathf.Max(0f, currentMeter);
     }
 

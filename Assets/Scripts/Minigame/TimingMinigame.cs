@@ -37,9 +37,9 @@ public class TimingMinigame : Minigame
         UpdateText();
     }
 
-    void Update()
+    public override void OnUpdate(float deltaTime)
     {
-        markerPosition += direction * markerSpeed * Time.deltaTime;
+        markerPosition += direction * markerSpeed * deltaTime;
 
         if (markerPosition > RightLimit)
         {
@@ -54,11 +54,17 @@ public class TimingMinigame : Minigame
         }
         marker.anchoredPosition = new Vector2(markerPosition, marker.anchoredPosition.y);
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame || Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            CheckHit();
-        }
+        //if (Keyboard.current.spaceKey.wasPressedThisFrame || Mouse.current.leftButton.wasPressedThisFrame)
+        //{
+        //    CheckHit();
+        //}
     }
+
+    public override void HandleInput()
+    {
+        CheckHit();
+    }
+
     private void CheckHit()
     {
         float targetLeft = target.anchoredPosition.x - target.rect.width / 2f;

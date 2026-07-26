@@ -42,6 +42,6 @@ public class NPC : Interactable
         }
 
         else
-        DialogueManager.Instance.OnInteract();
+            DialogueManager.Instance.OnInteract();
     }
 }

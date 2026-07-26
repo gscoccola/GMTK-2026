@@ -11,9 +11,9 @@ public class TestMinigame : Minigame
         timer = 2f;
     }
 
-    private void Update()
+    public override void OnUpdate(float deltaTime)
     {
-        timer -= Time.deltaTime;
+        timer -= deltaTime;
         if (timer <= 0)
         {
             Finish(true);

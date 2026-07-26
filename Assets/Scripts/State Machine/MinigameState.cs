@@ -1,13 +1,12 @@
-using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MinigameState : State
 {
-    public Minigame minigame;
+    [ReadOnly] public Minigame minigame;
 
     public override void OnEnter()
     {
-        InputManager.Instance.EnableDialogue();
-        //InputManager.Instance.Actions.Minigame.Interact.performed += OnAdvance;
+        InputManager.Instance.Actions.Minigame.Interact.performed += OnInteract;
     }
 
     public override void OnUpdate(float deltaTime)
@@ -17,6 +16,12 @@ public class MinigameState : State
 
     public override void OnExit()
     {
-        //InputManager.Instance.Actions.Dialogue.Interact.performed -= OnAdvance;
+        minigame = null;
+        InputManager.Instance.Actions.Dialogue.Interact.performed -= OnInteract;
+    }
+
+    private void OnInteract(InputAction.CallbackContext ctx)
+    {
+        minigame.HandleInput();
     }
 }

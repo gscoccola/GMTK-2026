@@ -16,6 +16,11 @@ public abstract class Minigame : MonoBehaviour
     {
     }
 
+    public virtual void HandleInput()
+    {
+        Debug.Log("HandleInput");
+    }
+
     protected void Finish(bool success)
     {
         if (finished)
