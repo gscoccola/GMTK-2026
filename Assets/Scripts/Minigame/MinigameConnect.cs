@@ -84,7 +84,7 @@ public class MinigameConnect : Minigame
 
         CancelCurrentDrag();
         dragStartNode = node;
-        activeLine = Instantiate(linePrefab);
+        activeLine = Instantiate(linePrefab, transform);
         activeLine.positionCount = 2;
         activeLine.SetPosition(0, dragStartNode.transform.position);
         activeLine.SetPosition(1, ScreenToWorld(eventData.position));
