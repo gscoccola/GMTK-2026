@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cfa90e6cdb00bb469edf01839e6415b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
-  _deadZone: {x: 4, y: 3}
+  _deadZone: {x: 2, y: 1.5}
 --- !u!114 &6669266551481320372
 MonoBehaviour:
   m_ObjectHideFlags: 0
