@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnUpdate()
     {
+        if (Time.timeScale == 0f) return;
         if (input.x > 0) RunningDirection = Vector2Int.right;
         else if (input.x < 0) RunningDirection = Vector2Int.left;
         else if (input.y > 0) RunningDirection = Vector2Int.up;
