@@ -22,10 +22,8 @@ public class TextBox : MonoBehaviour
 
     public void OnInteract(InputValue value)
     {
-        Debug.Log("Interact button pressed");
-
         if (value.isPressed)
-            OnSkipPerformed();
+        OnSkipPerformed();
     }
 
     private void OnSkipPerformed()
