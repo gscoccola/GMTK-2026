@@ -7,10 +7,10 @@ public class Task : MonoBehaviour
     public TaskGiverId GiverId;
     public UnityEvent OnActivate = new UnityEvent();
 
-    private void Start()
+    /*private void Start()
     {
         TaskManager.Instance.AddTask(this);
-    }
+    }*/
 
     public void OnComplete()
     {
