@@ -5,10 +5,10 @@ public class Task : MonoBehaviour
     public TaskId Id;
     public TaskGiverId GiverId;
 
-    private void Start()
+    /*private void Start()
     {
         TaskManager.Instance.AddTask(this);
-    }
+    }*/
 
     public void OnComplete()
     {
@@ -32,4 +32,7 @@ public enum TaskId
     CaptainBottle,
     CaptainHat,
     CaptainMusic,
+    ChefStir,
+    ChefTaste,
+    ChefChop,
 }

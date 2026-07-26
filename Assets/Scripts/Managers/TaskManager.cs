@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class TaskManager : Singleton<TaskManager>
 {
+    [SerializeField] private float _initialTimer = 5f;
     [SerializeField] private float _taskTimer = 10f;
     [SerializeField] private float _npcTaskChance = 1f;
+
+    [SerializeField] private Task[] _taskGameobjects;
 
     //[SerializeField] [ReadOnly] private List<Task> _availableShipTasks = new();
     //private List<Task> _assignedTasks = new();
@@ -15,7 +18,7 @@ public class TaskManager : Singleton<TaskManager>
 
     private List<TaskGiverId> _availableGivers = new();
     private List<TaskGiverId> _assignedGivers = new();
-    [SerializeField][ReadOnly] private int _shipTastks;
+    [SerializeField][ReadOnly] private int _shipTasks;
 
     private float _timeleft;
     private bool _hasShuffled;
@@ -28,8 +31,8 @@ public class TaskManager : Singleton<TaskManager>
 
     private void Start()
     {
-        _availableGivers.Shuffle();
-        _timeleft = _taskTimer;
+        _timeleft = _initialTimer;
+
     }
 
     public void AddNPC(TaskGiverId npcId, NPC npc)
@@ -62,10 +65,16 @@ public class TaskManager : Singleton<TaskManager>
     {
         if (!_hasShuffled)
         {
+            _hasShuffled = true;
+            _availableGivers.Shuffle();
             _tasks[TaskGiverId.Ship].Shuffle();
             foreach (var id in _availableGivers)
             {
                 _tasks[id].Shuffle();
+                foreach (var task in _taskGameobjects)
+                {
+                    AddTask(task);
+                }
             }
         }
         _timeleft -= Time.deltaTime;
@@ -88,7 +97,7 @@ public class TaskManager : Singleton<TaskManager>
 
             _npcs[task.GiverId].AssignTask(task.Id);
             _availableGivers.Remove(giver);
-            Debug.Log("task given from npc " + giver);
+            Debug.Log("task given from npc " + giver + " , " + task.Id);
         }
         else if (_tasks[TaskGiverId.Ship].Count > 0)
         {

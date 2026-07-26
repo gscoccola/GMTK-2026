@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour, IStateSaver
 {
-    private HappynessLevel _happynessLevel = HappynessLevel.Neutral;
+    public HappynessLevel HappynessLevel = HappynessLevel.Happy;
     private void Start()
     {
-        _happynessLevel = PersistentData.Instance.GetPlayerState().PlayerHappynessLevel;
+        HappynessLevel = PersistentData.Instance.GetPlayerState().PlayerHappynessLevel;
         PersistentData.Instance.AddSaver(this);
     }
 
     public void SaveState()
     {
-        PersistentData.Instance.SavePlayerState(new PlayerSavedState(_happynessLevel));
+        PersistentData.Instance.SavePlayerState(new PlayerSavedState(HappynessLevel));
     }
 }
 
@@ -19,7 +19,7 @@ public class PlayerStats : MonoBehaviour, IStateSaver
 
 public enum HappynessLevel
 {
-    Neutral,
     Happy,
+    Neutral,
     Upset,
 }

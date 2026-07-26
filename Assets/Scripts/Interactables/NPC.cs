@@ -19,7 +19,7 @@ public class NPC : Interactable
 
     private void Awake()
     {
-        TaskManager.Instance.AddNPC(_npcId, this);
+        
         _exclamationMark = transform.GetChild(0).gameObject;
 
         foreach (var dialog in _info.TaskDialogs)
@@ -33,6 +33,7 @@ public class NPC : Interactable
     {
         _animator = GetComponent<Animator>();
         _exclamationMark.SetActive(false);
+        TaskManager.Instance.AddNPC(_npcId, this);
     }
 
     public void SetMissionFinished(TaskId taskId, bool succeded)

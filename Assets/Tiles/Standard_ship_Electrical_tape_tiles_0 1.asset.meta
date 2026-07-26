@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/Tiles/Standard_ship_Electrical_tape_tiles_0 1.asset.meta
 guid: 8d989c429f0e58e4eaefd8b4bc0f768e
 NativeFormatImporter:
+========
+guid: cb6317b42e0cad946bcb91b8590e140e
+folderAsset: yes
+DefaultImporter:
+>>>>>>>> Stashed changes:Assets/Art/FX.meta
   externalObjects: {}
   mainObjectFileID: 11400000
   userData: 

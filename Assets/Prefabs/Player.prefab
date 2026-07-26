@@ -129,6 +129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7229396829410618235}
+  - component: {fileID: 4511503610301569019}
   - component: {fileID: 6543178116355338336}
   - component: {fileID: 3725046001679047336}
   - component: {fileID: 7363845139535716574}
@@ -161,6 +162,19 @@ Transform:
   - {fileID: 3391153996826600019}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4511503610301569019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8965312928955809032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac26b420afbf304281eafe7a4158da1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
+  HappynessLevel: 0
 --- !u!114 &6543178116355338336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9346de252810fed4783ef6db884e82a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  speed: 5
+  speed: 8
   RunningDirection: {x: 0, y: 0}
 --- !u!114 &3725046001679047336
 MonoBehaviour:
@@ -199,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cfa90e6cdb00bb469edf01839e6415b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
-  _deadZone: {x: 4, y: 3}
+  _deadZone: {x: 2, y: 1.5}
 --- !u!114 &6669266551481320372
 MonoBehaviour:
   m_ObjectHideFlags: 0
