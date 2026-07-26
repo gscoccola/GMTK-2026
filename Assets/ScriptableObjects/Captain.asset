@@ -12,16 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953f267c8658fa14abf1746824cdb755, type: 3}
   m_Name: Captain
   m_EditorClassIdentifier: Assembly-CSharp::NPCInfoSO
-  Missions:
-  - ID: FirstMission
-    Description: 
-    InitialDialog:
-    - This is your first Mission!
-    RepeatDialog:
-    - Repeating your first Mission!
-  - ID: SecondMission
-    Description: 
-    InitialDialog:
-    - Well Done!
-    RepeatDialog:
-    - Go bother someone else
+  TaskDialogs:
+  - ID: 0
+    Briefing:
+    - Get my bottle
+    Pending:
+    - my bottle
+    Succeded:
+    - Thanks for the bottle
+    Failed:
+    - didnt get my bottle
+  - ID: 1
+    Briefing:
+    - Get my hat
+    Pending:
+    - my hat
+    Succeded:
+    - Thanks for the hat
+    Failed:
+    - didnt get my hat
+  - ID: 2
+    Briefing:
+    - Get my music
+    Pending:
+    - my music
+    Succeded:
+    - Thanks for the music
+    Failed:
+    - didnt get my music

@@ -5,15 +5,16 @@ using UnityEngine;
 
 public class NPCInfoSO : ScriptableObject
 {
-    public NPCMission[] Missions;
+    public NPCTaskDialog[] TaskDialogs;
 }
 
 [Serializable]
-public class NPCMission
+public class NPCTaskDialog
 {
-    public string ID;
-    public string Description;
+    public TaskId ID;
 
-    public string[] InitialDialog;
-    public string[] RepeatDialog;
+    public string[] Briefing;
+    public string[] Pending;
+    public string[] Succeded;
+    public string[] Failed;
 }

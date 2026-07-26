@@ -21,9 +21,10 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
         textBox.SetActive(false);
     }
 
-    public void OnInteract()
+    public void OnInteract(out bool dialogComplete)
     {
         OnSkipPerformed();
+        dialogComplete = dialogueLines == null;
     }
 
     private void OnSkipPerformed()

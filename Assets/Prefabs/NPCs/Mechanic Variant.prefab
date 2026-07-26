@@ -13,6 +13,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: aa0619ab58791a24f89c933adc577fc0, type: 2}
     - target: {fileID: 3621266562199507941, guid: f0b5b109746f8d846ab027c53186aae3, type: 3}
+      propertyPath: _npcId
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3621266562199507941, guid: f0b5b109746f8d846ab027c53186aae3, type: 3}
       propertyPath: npcName
       value: Mechanic
       objectReference: {fileID: 0}
