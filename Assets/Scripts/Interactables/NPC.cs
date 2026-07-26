@@ -22,10 +22,11 @@ public class NPC : Interactable
         stateMachine = FindAnyObjectByType<StateMachine>();
         _exclamationMark = transform.GetChild(0).gameObject;
 
-        foreach (var dialog in _info.TaskDialogs)
-        {
-            _dialogDict[dialog.ID] = dialog;
-        }
+        if (_info != null && _info.TaskDialogs != null && _info.TaskDialogs.Length > 0)
+            foreach (var dialog in _info.TaskDialogs)
+            {
+                _dialogDict[dialog.ID] = dialog;
+            }
     }
 
 
