@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TaskManager : Singleton<TaskManager>
 {
+    [SerializeField] private float _initialTimer = 5f;
     [SerializeField] private float _taskTimer = 10f;
     [SerializeField] private float _npcTaskChance = 1f;
 
@@ -15,7 +16,7 @@ public class TaskManager : Singleton<TaskManager>
 
     private List<TaskGiverId> _availableGivers = new();
     private List<TaskGiverId> _assignedGivers = new();
-    [SerializeField][ReadOnly] private int _shipTastks;
+    [SerializeField][ReadOnly] private int _shipTasks;
 
     private float _timeleft;
     private bool _hasShuffled;
@@ -29,7 +30,7 @@ public class TaskManager : Singleton<TaskManager>
     private void Start()
     {
         _availableGivers.Shuffle();
-        _timeleft = _taskTimer;
+        _timeleft = _initialTimer;
     }
 
     public void AddNPC(TaskGiverId npcId, NPC npc)
