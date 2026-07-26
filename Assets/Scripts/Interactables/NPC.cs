@@ -3,10 +3,10 @@ using UnityEngine;
 public class NPC : Interactable
 {
     [SerializeField] private string npcName;
-    [SerializeField] private string[] dialogue;
+
     [SerializeField] private NPCInfoSO _info;
 
-    [SerializeField] private NPCMission _currentMission;
+    [SerializeField][ReadOnly] private NPCMission _currentMission;
     [SerializeField][ReadOnly] private bool _wasBriefed;
     private int _currentMissionIndex;
 
@@ -29,12 +29,19 @@ public class NPC : Interactable
     {
         if (!DialogueManager.Instance.HasLinesLoaded)
         {
-            // Daniel: Can be modified to include the npc's name if you want to.
-            DialogueManager.Instance.SetDialogue(dialogue);
+            if (!_wasBriefed)
+            {
+                DialogueManager.Instance.SetDialogue(_currentMission.InitialDialog);
+                _wasBriefed = true;
+            }
+
+            else
+                DialogueManager.Instance.SetDialogue(_currentMission.RepeatDialog);
+
             stateMachine.ChangeState<DialogueState>();
         }
 
         else
-            DialogueManager.Instance.OnInteract();
+        DialogueManager.Instance.OnInteract();
     }
 }

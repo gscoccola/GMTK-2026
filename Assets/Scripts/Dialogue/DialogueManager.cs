@@ -7,21 +7,13 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
     [SerializeField] private GameObject textBox;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private float typingSpeed = 0.05f;
-    
+
     private string[] dialogueLines;
     public bool HasLinesLoaded => dialogueLines != null;
     private int currentLineIndex = 0;
     private bool isTyping = false;
     private bool isTextFullyVisible = false;
     private int visibleCharacterCount = 0;
-
-    public void SetDialogue(string[] newDialogue)
-    {
-        textBox.SetActive(true);
-        dialogueLines = newDialogue;
-        currentLineIndex = 0;
-        DisplayCurrentLine();
-    }
     
     private void Start()
     {
@@ -96,4 +88,13 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
     {
         dialogueText.maxVisibleCharacters = dialogueText.text.Length;
     }
+
+    public void SetDialogue(string[] newDialogue)
+    {
+        dialogueLines = newDialogue;
+        textBox.SetActive(true);
+        currentLineIndex = 0;
+        DisplayCurrentLine();
+    }
+
 }
