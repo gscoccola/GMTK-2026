@@ -8,6 +8,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3621266562199507941, guid: f0b5b109746f8d846ab027c53186aae3, type: 3}
+      propertyPath: _info
+      value: 
+      objectReference: {fileID: 11400000, guid: 82fd97e3e3867cc42ae27adea2617605, type: 2}
+    - target: {fileID: 3621266562199507941, guid: f0b5b109746f8d846ab027c53186aae3, type: 3}
+      propertyPath: _npcId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3621266562199507941, guid: f0b5b109746f8d846ab027c53186aae3, type: 3}
+      propertyPath: npcName
+      value: Captain
+      objectReference: {fileID: 0}
     - target: {fileID: 8384091758753827968, guid: f0b5b109746f8d846ab027c53186aae3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3
