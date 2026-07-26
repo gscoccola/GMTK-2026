@@ -17,26 +17,26 @@ MonoBehaviour:
     Briefing:
     - Stir the soup
     Pending:
-    - I said stir the soup
+    - Not done.
     Succeded:
-    - Great job!
+    - Stop. It's good.
     Failed:
-    - The soup got clumpy!
+    - '*static* Somebody stopped stirring.'
   - ID: 4
     Briefing:
-    - Tast the soup
+    - Hold. Don't ask what.
     Pending:
-    - Have a taste
+    - Rat's watching you.
     Succeded:
-    - Delicious, isn't it?
+    - Good.
     Failed:
-    - Fine, I'll do it myself
+    - '*static* There''s a fire.'
   - ID: 5
     Briefing:
     - Chop these onions
     Pending:
-    - They won't chop themselves
+    - ...?
     Succeded:
-    - Impeccable technique!
+    - Done. Meal ready.
     Failed:
-    - You're a lazy robot
+    - '*static* Grease fire.'

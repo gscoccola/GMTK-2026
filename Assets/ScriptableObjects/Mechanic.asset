@@ -12,16 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953f267c8658fa14abf1746824cdb755, type: 3}
   m_Name: Mechanic
   m_EditorClassIdentifier: Assembly-CSharp::NPCInfoSO
-  Missions:
-  - ID: FirstMission
-    Description: 
-    InitialDialog:
-    - mec first Mission!
-    RepeatDialog:
-    - mec Repeating your first Mission!
-  - ID: SecondMission
-    Description: 
-    InitialDialog:
-    - Well Done!
-    RepeatDialog:
-    - Go bother someone else
+  TaskDialogs:
+  - ID: 6
+    Briefing:
+    - Microbreach on deck two. And before you ask, the sealant isn't missing because
+      of me.
+    Pending:
+    - Nice servos on you. Are those original? Relax, I'm not going to do anything
+      about it.
+    Succeded:
+    - Sorted, cheers. I'll owe you one. I won't pay it back.
+    Failed:
+    - '*static* That room''s venting! What did you do?'
+  - ID: 7
+    Briefing:
+    - Power's failing on this junction, probably because I took a coupling out of
+      it last week.
+    Pending:
+    - These arms? I built them, I built them out of things that were, strictly speaking,
+      the ship's.
+    Succeded:
+    - Runs better than it did before. That's either me or luck, and I'm saying me.
+    Failed:
+    - '*static* Corridor''s dark now. And don''t pick anything up off that floor,
+      I''ll be back for it.'
+  - ID: 8
+    Briefing:
+    - Airlock servo's dead so it's a manual crank now. Go do your thing.
+    Pending:
+    - The chef leaves a plate outside my door. If either of us mentions it he'll
+      stop, so we don't.
+    Succeded:
+    - Don't let the others see you can do that.
+    Failed:
+    - '*static* Airlock''s jammed shut. Whatever, we''ll work round it.'
