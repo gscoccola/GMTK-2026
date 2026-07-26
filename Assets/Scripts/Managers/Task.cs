@@ -32,6 +32,8 @@ public class Task : MonoBehaviour
 
     private void Finished(bool success) {
         TaskManager.Instance.OnTaskFinished(this, success);
+        float timeDif = success ? 10f : -10f;
+        CountdownManager.Instance.IncreaseTimer(timeDif);
     }
 }
 

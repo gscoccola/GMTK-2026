@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1707117960510827823}
   - component: {fileID: 2294027199049463873}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 8356675879316882226}
   - component: {fileID: 5539972222821434851}
   - component: {fileID: 4792648921102989372}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Connect Node
   m_TagString: Untagged
   m_Icon: {fileID: 0}

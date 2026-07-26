@@ -38,7 +38,7 @@ public class CountdownManager : Singleton<CountdownManager>
     {
         isGameOver = true;
         Time.timeScale = 0;
-        LevelLoader.Instance.ReloadLevel();
+        
         GameOverScreen.SetActive(true);
     }
 }
