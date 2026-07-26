@@ -30,12 +30,12 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3430660950873412124}
+  - {fileID: 8232757540402849552}
+  - {fileID: 6633051243407393103}
   - {fileID: 4379839602603462427}
   - {fileID: 2233265313459024832}
   - {fileID: 8585896421647170389}
   - {fileID: 2651133226303303376}
-  - {fileID: 8232757540402849552}
-  - {fileID: 6633051243407393103}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &223997315633743482
@@ -1819,6 +1819,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chef
       objectReference: {fileID: 0}
+    - target: {fileID: 1955028046921296263, guid: b689cb88bed32214184d061e854fb9de, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1840,6 +1844,10 @@ PrefabInstance:
     - target: {fileID: 508941730010969023, guid: bc7d230fa6001264cbbd359675b3898f, type: 3}
       propertyPath: m_Name
       value: Weapons
+      objectReference: {fileID: 0}
+    - target: {fileID: 508941730010969023, guid: bc7d230fa6001264cbbd359675b3898f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 881012847042421121, guid: bc7d230fa6001264cbbd359675b3898f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2005,6 +2013,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scientist
       objectReference: {fileID: 0}
+    - target: {fileID: 5242635081126923992, guid: 776b5371257794249b40630c2401562b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2025,7 +2037,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1467724771823132112, guid: 2ef858035078ad241b113f3f1e3bd712, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1467724771823132112, guid: 2ef858035078ad241b113f3f1e3bd712, type: 3}
       propertyPath: m_LocalPosition.y

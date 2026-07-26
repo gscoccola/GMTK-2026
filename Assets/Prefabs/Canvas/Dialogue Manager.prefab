@@ -379,7 +379,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TextBox
   dialogueText: {fileID: 6370735249313362229}
   typingSpeed: 0.05
-  dialogueLines:
-  - Test Dialogue 1.
-  - Test Dialogue 2.
-  - Test Dialogue 3
+  dialogueLines: []

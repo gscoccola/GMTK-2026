@@ -8,7 +8,7 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
     [SerializeField] private GameObject textBox;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private float typingSpeed = 0.05f;
-    
+
     private string[] dialogueLines;
     public bool HasLinesLoaded => dialogueLines != null;
     private int currentLineIndex = 0;
@@ -92,8 +92,8 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
 
     public void SetDialogue(string[] newDialogue)
     {
-        textBox.SetActive(true);
         dialogueLines = newDialogue;
+        textBox.SetActive(true);
         currentLineIndex = 0;
         DisplayCurrentLine();
     }

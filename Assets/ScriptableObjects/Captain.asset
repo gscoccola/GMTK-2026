@@ -10,6 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 953f267c8658fa14abf1746824cdb755, type: 3}
-  m_Name: NewNPCInfo
+  m_Name: Captain
   m_EditorClassIdentifier: Assembly-CSharp::NPCInfoSO
-  Missions: []
+  Missions:
+  - ID: FirstMission
+    Description: 
+    InitialDialog:
+    - This is your first Mission!
+    RepeatDialog:
+    - Repeating your first Mission!
+  - ID: SecondMission
+    Description: 
+    InitialDialog:
+    - Well Done!
+    RepeatDialog:
+    - Go bother someone else
