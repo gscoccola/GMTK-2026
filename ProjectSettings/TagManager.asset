@@ -62,6 +62,9 @@ TagManager:
   - name: Dialog
     uniqueID: 562989823
     locked: 0
+  - name: Minigame
+    uniqueID: 1057444293
+    locked: 0
   m_RenderingLayers:
   - Default
   m_MigratedRenderPipelines: []
