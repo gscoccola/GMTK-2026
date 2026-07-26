@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Tiles/Foreground/ExternalWallTiles_13.asset.meta
 guid: 37806939e093ed04f8dfb6584083fb4f
+========
+guid: 09ecd707be287b64880d877f634e70b9
+>>>>>>>> main:Assets/ScriptableObjects/Alien1.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

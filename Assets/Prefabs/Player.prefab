@@ -187,8 +187,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9346de252810fed4783ef6db884e82a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  speed: 8
+  speed: 12
   RunningDirection: {x: 0, y: 0}
+  footstepClips:
+  - {fileID: 0}
+  - {fileID: 0}
+  stepInterval: 0.4
 --- !u!114 &3725046001679047336
 MonoBehaviour:
   m_ObjectHideFlags: 0

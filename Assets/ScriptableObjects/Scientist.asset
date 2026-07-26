@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 953f267c8658fa14abf1746824cdb755, type: 3}
+  m_Name: Scientist
+  m_EditorClassIdentifier: Assembly-CSharp::NPCInfoSO
+  TaskDialogs:
+  - ID: 9
+    Briefing:
+    - Robot! The reactor rods have gone unstable, so as the ship's scientist, I am
+      giving this to you.
+    Pending:
+    - We are not two kids in a coat. I have a beard, see?
+    Succeded:
+    - We knew that'd work.
+    Failed:
+    - '*static* It''s glowing now!'
+  - ID: 10
+    Briefing:
+    - Oxygen thing broke! I'd go myself but... I am very tall.
+    Pending:
+    - There's a jar in our quarters. We named it after the captain!
+    Succeded:
+    - Got it, thanks robot!
+    Failed:
+    - '*static* It ruptured and it was AMAZING!'
+  - ID: 11
+    Briefing:
+    - The terminal's frozen, quick, reboot it before anyone asks who did it!
+    Pending:
+    - The mechanic told us to stop taking parts. She takes parts, it's not different!
+    Succeded:
+    - Rebooted! You're really good at this!
+    Failed:
+    - '*static* Nobody knows where the ship is now. I thought I told you to fix it!'
