@@ -34,4 +34,7 @@ public enum TaskId
     CaptainBottle,
     CaptainHat,
     CaptainMusic,
+    ChefStir,
+    ChefTaste,
+    ChefChop,
 }
