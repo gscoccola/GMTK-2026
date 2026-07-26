@@ -19,7 +19,7 @@ public class NPC : Interactable
 
     private void Awake()
     {
-        //stateMachine = FindAnyObjectByType<StateMachine>();
+        stateMachine = FindAnyObjectByType<StateMachine>();
         _exclamationMark = transform.GetChild(0).gameObject;
 
         foreach (var dialog in _info.TaskDialogs)
