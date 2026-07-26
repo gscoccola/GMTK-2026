@@ -10,6 +10,12 @@ public class FetchTask : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float timeLimit = 20f;
 
+    //Test
+    private void Start()
+    {
+        task.Activate();
+    }
+
     private bool active;
     private bool collected;
     private float timer;
@@ -90,6 +96,7 @@ public class FetchTask : MonoBehaviour
         if (spawnedReturnTrigger != null)
             Destroy(spawnedReturnTrigger);
 
+        Debug.Log("Finish task");
         task.OnComplete();
     }
 
