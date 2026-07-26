@@ -39,12 +39,13 @@ public class LevelLoader : PersistentSingleton<LevelLoader>
         float elapsedTime = 0f;
         while (elapsedTime < fadeDuration)
         {
-            elapsedTime += Time.deltaTime;
+            elapsedTime += Time.unscaledDeltaTime;
             float alpha = Mathf.Clamp01(elapsedTime / fadeDuration);
             _fadeImage.color = new Color(0, 0, 0, alpha);
             yield return null;
         }
         DOTween.KillAll();
+        Time.timeScale = 1;
         SceneManager.LoadScene(sceneName);
 
         elapsedTime = 0f;

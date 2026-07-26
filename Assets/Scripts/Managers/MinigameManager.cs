@@ -33,6 +33,7 @@ public class MinigameManager : MonoBehaviour
         sm.ChangeState<MinigameState>();
 
         currentMinigame.StartMinigame();
+        Time.timeScale = 0f;
     }
 
     private void CloseMinigame(bool success)
@@ -40,5 +41,6 @@ public class MinigameManager : MonoBehaviour
         FindAnyObjectByType<StateMachine>().ChangeState<GameplayState>();
         currentMinigame.OnMinigameFinished -= CloseMinigame;
         currentMinigame = null;
+        Time.timeScale = 1f;
     }
 }
