@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Tiles/Foreground/ExternalWallTiles_10.asset.meta
 guid: 43f5ca1b159e56c45ae5ccc5796da828
+========
+guid: e1cde106440d44b4885d84f095dca216
+>>>>>>>> Dzung:Assets/Tiles/Foreground/ExternalWallTiles_1.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000
