@@ -57,7 +57,7 @@ public class MinigameConnect : Minigame
     private void HandleTimer()
     {
         // Daniel: I think the timer should be elsewhere to apply for all the mini-games.
-        timer -= Time.deltaTime;
+        timer -= Time.unscaledDeltaTime;
 
         if (timer <= 0f)
         {

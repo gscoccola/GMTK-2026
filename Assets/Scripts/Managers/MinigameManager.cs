@@ -25,11 +25,13 @@ public class MinigameManager : MonoBehaviour
         currentMinigame.OnMinigameFinished += callback;
         currentMinigame.OnMinigameFinished += CloseMinigame;
         currentMinigame.StartMinigame();
+        Time.timeScale = 0f;
     }
 
     private void CloseMinigame(bool success)
     {
         currentMinigame.OnMinigameFinished -= CloseMinigame;
         currentMinigame = null;
+        Time.timeScale = 1f;
     }
 }
