@@ -348,7 +348,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: df7af89f2bce2bf49b79d25f6b91a097, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -653,7 +653,7 @@ PrefabInstance:
       objectReference: {fileID: 618500928}
     - target: {fileID: 5269938348319402241, guid: a3ec506166068ab41ad9f659bb179227, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6370735249313362229, guid: a3ec506166068ab41ad9f659bb179227, type: 3}
       propertyPath: m_fontSize
@@ -728,6 +728,35 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 5.625
       objectReference: {fileID: 0}
+    - target: {fileID: 4381519333745270680, guid: 7e96b54c189aa7146b8936b71ff4f2bd, type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4381519333745270680, guid: 7e96b54c189aa7146b8936b71ff4f2bd, type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4381519333745270680, guid: 7e96b54c189aa7146b8936b71ff4f2bd, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4381519333745270680, guid: 7e96b54c189aa7146b8936b71ff4f2bd, type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 1
+      value: 0.3181818
+      objectReference: {fileID: 0}
+    - target: {fileID: 4381519333745270680, guid: 7e96b54c189aa7146b8936b71ff4f2bd, type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0.24507041
+      objectReference: {fileID: 0}
+    - target: {fileID: 4381519333745270680, guid: 7e96b54c189aa7146b8936b71ff4f2bd, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 0.36363634
+      objectReference: {fileID: 0}
+    - target: {fileID: 4381519333745270680, guid: 7e96b54c189aa7146b8936b71ff4f2bd, type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 0.5070422
+      objectReference: {fileID: 0}
     - target: {fileID: 5539480724429628350, guid: 7e96b54c189aa7146b8936b71ff4f2bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -781,13 +810,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6543178116355338336, guid: 225d5c0171bb63f4b8c3603b6eed711f, type: 3}
+      propertyPath: footstepClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543178116355338336, guid: 225d5c0171bb63f4b8c3603b6eed711f, type: 3}
+      propertyPath: 'footstepClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 032f9fd74b5f64e499851bec2ac0b992, type: 3}
+    - target: {fileID: 6543178116355338336, guid: 225d5c0171bb63f4b8c3603b6eed711f, type: 3}
+      propertyPath: 'footstepClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 2eca1e6c45d5ccf4dbd4b71903e58da5, type: 3}
+    - target: {fileID: 6543178116355338336, guid: 225d5c0171bb63f4b8c3603b6eed711f, type: 3}
+      propertyPath: 'footstepClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 37d5613c296256444a06b78ba60fa144, type: 3}
     - target: {fileID: 7229396829410618235, guid: 225d5c0171bb63f4b8c3603b6eed711f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 7229396829410618235, guid: 225d5c0171bb63f4b8c3603b6eed711f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7229396829410618235, guid: 225d5c0171bb63f4b8c3603b6eed711f, type: 3}
       propertyPath: m_LocalPosition.z

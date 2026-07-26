@@ -78,6 +78,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4114872355646479443}
+  - component: {fileID: 2403502333828734953}
   - component: {fileID: 3950540374353975088}
   - component: {fileID: 2582751229386674675}
   m_Layer: 6
@@ -102,6 +103,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8384091758753827968}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2403502333828734953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9071161401722546185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6104744d381e6604cb3632b471256b40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ExclamationMark
 --- !u!212 &3950540374353975088
 SpriteRenderer:
   serializedVersion: 3
@@ -147,8 +160,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 454302231
-  m_SortingLayer: 1
+  m_SortingLayerID: -495854729
+  m_SortingLayer: 4
   m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 40a2ad1288aa7a149b1b7122609d7bb8, type: 3}
@@ -218,8 +231,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6593094586488169392}
   - {fileID: 4114872355646479443}
+  - {fileID: 6593094586488169392}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3621266562199507941
@@ -235,11 +248,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   interactionPrompt: Interact
-  npcName: NPC Test
-  dialogue:
-  - Test Dialogue 1.
-  - Test Dialogue 2.
-  - Test Dialogue 3.
+  _npcId: 0
+  _info: {fileID: 0}
+  _currentTaskId: 0
+  _wasMissionBriefed: 0
+  _taskStatus: 0
 --- !u!212 &5079706265731844848
 SpriteRenderer:
   serializedVersion: 3

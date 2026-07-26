@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 953f267c8658fa14abf1746824cdb755, type: 3}
+  m_Name: Chef
+  m_EditorClassIdentifier: Assembly-CSharp::NPCInfoSO
+  TaskDialogs:
+  - ID: 3
+    Briefing:
+    - Stir the soup
+    Pending:
+    - I said stir the soup
+    Succeded:
+    - Great job!
+    Failed:
+    - The soup got clumpy!
+  - ID: 4
+    Briefing:
+    - Tast the soup
+    Pending:
+    - Have a taste
+    Succeded:
+    - Delicious, isn't it?
+    Failed:
+    - Fine, I'll do it myself
+  - ID: 5
+    Briefing:
+    - Chop these onions
+    Pending:
+    - They won't chop themselves
+    Succeded:
+    - Impeccable technique!
+    Failed:
+    - You're a lazy robot
