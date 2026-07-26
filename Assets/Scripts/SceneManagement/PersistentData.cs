@@ -95,7 +95,7 @@ public class PlayerSavedState
 {
     public HappynessLevel PlayerHappynessLevel;
 
-    public PlayerSavedState(HappynessLevel happynessLevel = HappynessLevel.Neutral)
+    public PlayerSavedState(HappynessLevel happynessLevel = HappynessLevel.Happy)
     {
         PlayerHappynessLevel = happynessLevel;
     }

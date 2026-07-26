@@ -79,7 +79,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4, y: 4}
+  m_Size: {x: 3, y: 4}
   m_EdgeRadius: 0
 --- !u!212 &1424621752382235120
 SpriteRenderer:
@@ -126,8 +126,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 523412651
-  m_SortingLayer: 2
+  m_SortingLayerID: -1422057797
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 9847236, guid: 459487f5da101984a9ae6710c4f6140d, type: 3}
@@ -175,4 +175,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1824ca6bbfd10c14ea2ed786e946382f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorController
-  _openDistance: 5
+  _openDistance: 6

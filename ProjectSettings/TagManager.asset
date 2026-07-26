@@ -50,6 +50,9 @@ TagManager:
   - name: NPC
     uniqueID: 454302231
     locked: 0
+  - name: Door
+    uniqueID: 2872909499
+    locked: 0
   - name: ShipForeground
     uniqueID: 523412651
     locked: 0
