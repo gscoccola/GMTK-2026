@@ -27,6 +27,7 @@ public class GameplayState : State
 
     public override void OnExit()
     {
+        playerMovement.StopMovement();
         InputManager.Instance.Actions.Player.Move.performed -= playerMovement.Move;
         InputManager.Instance.Actions.Player.Move.canceled -= playerMovement.Move;
         InputManager.Instance.Actions.Player.Interact.performed -= OnInteract;

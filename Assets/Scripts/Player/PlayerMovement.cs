@@ -60,4 +60,16 @@ public class PlayerMovement : MonoBehaviour
     {
         input = context.ReadValue<Vector2>();
     }
+
+    public void StopMovement()
+    {
+        input = Vector2.zero;
+        RunningDirection = Vector2Int.zero;
+
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.constraints = RigidbodyConstraints2D.FreezePosition | RigidbodyConstraints2D.FreezeRotation;
+        }
+    }
 }
